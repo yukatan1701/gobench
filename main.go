@@ -69,9 +69,17 @@ func buildBenchmarks(c Configuration, bench []Benchmark, tmpDir string, verbose 
 	}
 	fmt.Printf("Building benchmarks for configuration '%s'...\n", c.Name)
 	gocmd := filepath.Join(root, "bin", "go")
+	pwd, err := os.Getwd()
+	if err != nil {
+		log.Fatal(err)
+	}
 	for _, b := range bench {
 		if b.Disabled {
 			continue
+		}
+		err = os.Chdir(pwd)
+		if err != nil {
+			log.Fatal(err)
 		}
 		bdir := os.ExpandEnv(b.Dir)
 		bdir, err := filepath.Abs(bdir)
