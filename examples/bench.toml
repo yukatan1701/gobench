@@ -1,0 +1,9 @@
+[[Benchmarks]]
+  Name = "memcopy"
+  Benchmarks = "Benchmark"
+  Dir = "memcopy"
+
+[[Benchmarks]]
+  Name = "memzero"
+  Benchmarks = "Benchmark"
+  Dir = "memzero"

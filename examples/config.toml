@@ -1,0 +1,8 @@
+[[Configurations]]
+  Name = "memory"
+  Root = "$HOME/golang"
+  #GcFlags = "-N -l"
+  LdFlags = "-funcalign=32"
+  GcEnv = ["GOARM64=v8.2"]
+  RunFlags = ["-test.benchtime=10000000x"]
+  RunWrapper = ["/usr/bin/taskset", "-c", "0-3"]

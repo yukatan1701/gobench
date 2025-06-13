@@ -1,0 +1,9 @@
+[[Configurations]]
+  Name = "pgo_use"
+  Root = "$HOME/golang"
+  #GcFlags = "-N -l"
+  LdFlags = "-funcalign=32"
+  GcEnv = ["GOARM64=v8.2"]
+  RunFlags = ["-test.benchtime=10000000x"]
+  RunWrapper = ["/usr/bin/taskset", "-c", "0-3"]
+  PgoUse = "pgo_gen" # We've generated profiles using the 'pgo_gen' configuration
