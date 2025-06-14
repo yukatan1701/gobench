@@ -190,7 +190,7 @@ func runBenchmarks(c Configuration, bench []Benchmark, tmpDir string, count int,
 			fmt.Println()
 			cmd.Stdout = os.Stdout
 			cmd.Stderr = os.Stderr
-			fmt.Printf("shortname: %s\ntoolchain: %s\n", b.Name, c.Name)
+			fmt.Printf("shortname: %s\n(toolchain: %s)\n", b.Name, c.Name)
 			err = cmd.Run()
 			if err != nil {
 				log.Fatal(err)
